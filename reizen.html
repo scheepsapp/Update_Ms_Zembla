@@ -92,7 +92,7 @@
 <body class="pb-16">
 
     <!-- NAVIGATION BAR -->
-    <nav class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5 px-6 py-4 flex justify-between items-center">
+<nav class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5 px-6 py-4 flex justify-between items-center">
         <div class="flex items-center gap-3.5">
             <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
                 <i class="fas fa-ship text-white text-lg"></i>
@@ -104,7 +104,7 @@
         </div>
 
         <div class="flex items-center gap-3">
-            <button onclick="maakPDF()" class="w-10 h-10 bg-red-500/10 border border-red-500/20 text-red-500 rounded-xl flex items-center justify-center hover:bg-red-500 hover:text-white transition-all shadow-md" title="Exporteer Jaarrapport (PDF)">
+            <button onclick="maakPDF()" class="w-10 h-10 bg-red-500/10 border border-red-500/20 text-red-500 rounded-xl flex items-center justify-center hover:bg-red-500 hover:text-white transition-all shadow-md" title="Exporteer Jaarrapport (PDF)" aria-label="Exporteer Jaarrapport (PDF)">
                 <i class="fas fa-file-pdf"></i>
             </button>
 
@@ -113,17 +113,16 @@
                 <span class="hidden md:inline">Nieuwe Reis</span>
             </button>
             
-            <select id="filter-jaar" onchange="laadDataVanCloud()" class="bg-slate-900 border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white outline-none cursor-pointer">
-                <option value="2026">2026</option>
-                <option value="2025">2025</option>
+            <select id="filter-jaar" onchange="laadDataVanCloud()" aria-label="Selecteer jaar" class="bg-slate-900 border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white outline-none cursor-pointer">
+                <option value="2026" class="bg-slate-900 text-white">2026</option>
+                <option value="2025" class="bg-slate-900 text-white">2025</option>
             </select>
             
-            <button onclick="laadDataVanCloud()" class="w-10 h-10 bg-slate-900 border border-white/10 rounded-xl text-slate-400 hover:text-white flex items-center justify-center transition-colors">
+            <button onclick="laadDataVanCloud()" aria-label="Ververs gegevens" class="w-10 h-10 bg-slate-900 border border-white/10 rounded-xl text-slate-400 hover:text-white flex items-center justify-center transition-colors">
                 <i class="fas fa-sync-alt text-xs" id="refresh-icon"></i>
             </button>
         </div>
     </nav>
-
     <!-- MAIN CONTENT CONTAINER -->
     <main class="max-w-6xl mx-auto px-6 mt-8">
 
@@ -231,7 +230,7 @@
     </div>
 
 <script>
-const GOOGLE_SCRIPT_URL = 'hhttps://script.google.com/macros/s/AKfycbzBk-WG1h1oc-Sij8MOJFQUhXyWefBs0DUQcbm0_NQ1k0yL4hWnHNt3GIIVj7GMMg-6/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzs6SzEmIMJp5AmUrvIe_VfgwOp_sxbwOMZhJfIPFl8RUL8WK-onkSWY3YCQldKux5k/exec';
 let actueleData = [];
 let geselecteerdeIndex = null;
 
