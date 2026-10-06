@@ -2,7 +2,7 @@
 :: Geen setlocal om fouten te voorkomen
 
 echo ============================================
-echo      Update_Schip_Amazone
+echo      Update_Schip_Zembla
 echo ============================================
 
 :: 1. Controleer op Admin rechten
@@ -14,8 +14,8 @@ if %errorLevel% neq 0 (
 )
 
 :: 2. Map instellen
-set appDir=C:\Program Files (x86)\MS Amazone
-set baseUrl=https://raw.githubusercontent.com/scheepsapp/Update_Ms_Amazone/refs/heads/main/
+set appDir=C:\Program Files (x86)\MS Zembla
+set baseUrl=https://raw.githubusercontent.com/scheepsapp/Update_Ms_Zembla/refs/heads/main/
 
 :: 3. Elk bestand handmatig (geen ingewikkelde codes)
 

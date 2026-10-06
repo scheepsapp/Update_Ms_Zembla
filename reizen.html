@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MS Amazone - Reizen & DGS Beheer</title>
+    <title>Reizen</title>
     
     <!-- External Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -98,7 +98,7 @@
                 <i class="fas fa-ship text-white text-lg"></i>
             </div>
             <div>
-                <h1 class="text-base font-extrabold uppercase tracking-tight text-white leading-none">MS Amazone</h1>
+                <h1 class="text-base font-extrabold uppercase tracking-tight text-white leading-none">MS Zembla</h1>
                 <span class="sync-badge inline-block mt-1" id="sync-text">Cloud Verbonden</span>
             </div>
         </div>
@@ -231,7 +231,7 @@
     </div>
 
 <script>
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyYbfeApdhDzQDw-JeS8ApxQ4g9vwNhKE-YIp6iuysOhYFVFQeOTNo5umeip-p3vlmV/exec';
+const GOOGLE_SCRIPT_URL = 'hhttps://script.google.com/macros/s/AKfycbzBk-WG1h1oc-Sij8MOJFQUhXyWefBs0DUQcbm0_NQ1k0yL4hWnHNt3GIIVj7GMMg-6/exec';
 let actueleData = [];
 let geselecteerdeIndex = null;
 
@@ -596,7 +596,7 @@ function maakPDF() {
         pdf.setFont("helvetica", "bold");
         pdf.setFontSize(8);
         pdf.setTextColor(255, 255, 255);
-        pdf.text(`MS Amazone - Reisverslag - ${new Date().toLocaleDateString('nl-NL')}`, 105, 294, { align: 'center' });
+        pdf.text(`MS Zembla - Reisverslag - ${new Date().toLocaleDateString('nl-NL')}`, 105, 294, { align: 'center' });
     };
 
     // ================= PAGINA 1: REIZEN OVERZICHT =================
@@ -738,7 +738,7 @@ function maakPDF() {
     });
 
     // PDF Opslaan
-    doc.save(`MS_Amazone_Reisverslag_${jaar}.pdf`);
+    doc.save(`MS_Zembla_Reisverslag_${jaar}.pdf`);
 }
 
 // --- 7. UTILITY & CONTEXT MENU ACTIES ---

@@ -815,7 +815,7 @@
 
   <script>
 // STEL JE HUIDIGE VERSIE HIER IN
-        const currentVersion = "1.2.4"; 
+        const currentVersion = "1.1.1"; 
 const githubUrl = "https://raw.githubusercontent.com/scheepsapp/Update_Ms_Zembla/refs/heads/main/index.html";
 
 async function checkForUpdates() {
@@ -866,24 +866,24 @@ function toggleWifiQR() {
     const wifiOverlay = document.getElementById('wifi-overlay');
     wifiOverlay.classList.toggle('hidden');   
 }
-const stations = [ { id: 1, name: "Hoek van Holland", url: "https://waterinfo.rws.nl/publiek/waterhoogte/hoekvanholland/details", top: "-250px", left: "-15%", width: "130%" }, 
-{ id: 2, name: "Dordrecht", url: "https://waterinfo.rws.nl/publiek/waterhoogte/dordrecht.oudemaas.benedenmerwede/details", top: "-250px", left: "-15%", width: "130%" }, 
-{ id: 3, name: "Lobith", url: "https://waterinfo.rws.nl/publiek/waterhoogte/lobith.bovenrijn.tolkamer/details", top: "-250px", left: "-15%", width: "130%" }, 
-{ id: 4, name: "Nijmegen", url: "https://waterinfo.rws.nl/publiek/waterhoogte/nijmegen.waal/details", top: "-250px", left: "-15%", width: "130%" }, 
-{ id: 5, name: "Tiel", url: "https://waterinfo.rws.nl/publiek/waterhoogte/tiel.waal/details", top: "-250px", left: "-15%", width: "130%" },
-{ id: 6, name: "Zaltbommel", url: "https://waterinfo.rws.nl/publiek/waterhoogte/zaltbommel/details", top: "-250px", left: "-15%", width: "130%" },
-{ id: 7, name: "Dalem", url: "https://waterinfo.rws.nl/publiek/waterhoogte/dalem/details", top: "-250px", left: "-15%", width: "130%" },
-{ id: 8, name: "Werkendam", url: "https://waterinfo.rws.nl/publiek/waterhoogte/werkendam.nieuwemerwede/details", top: "-250px", left: "-15%", width: "130%" }, 
-{ id: 9, name: "Moerdijk", url: "https://waterinfo.rws.nl/publiek/waterhoogte/moerdijk/details", top: "-250px", left: "-15%", width: "130%" }, 
-{ id: 10, name: "Yerseke", url: "https://waterinfo.rws.nl/publiek/waterhoogte/yerseke/details", top: "-250px", left: "-15%", width: "130%" }, 
-{ id: 11, name: "Hansweert", url: "https://waterinfo.rws.nl/publiek/waterhoogte/hansweert/details", top: "-250px", left: "-15%", width: "130%" }, 
-{ id: 12, name: "Bath", url: "https://waterinfo.rws.nl/publiek/waterhoogte/rilland.bath/details", top: "-250px", left: "-15%", width: "130%" }, 
-{ id: 13, name: "Terneuzen", url: "https://waterinfo.rws.nl/publiek/waterhoogte/terneuzen/details", top: "-250px", left: "-15%", width: "130%" }, 
-{ id: 14, name: "Vlissingen", url: "https://waterinfo.rws.nl/publiek/waterhoogte/vlissingen/details", top: "-250px", left: "-15%", width: "130%" }, 
-{ id: 15, name: "Spijkenisse", url: "https://waterinfo.rws.nl/publiek/waterhoogte/spijkenisse.oudemaas/details", top: "-250px", left: "-15%", width:"130%" }, 
-{ id:16, name:"Vlaardingen", url:"https://waterinfo.rws.nl/publiek/waterhoogte/vlaardingen/details", top:"-250px", left:"-15%", width:"130%" }, 
-{ id:17, name:"Rotterdam", url:"https://waterinfo.rws.nl/publiek/waterhoogte/rotterdam.nieuwemaas.boerengat/details", top:"-250px", left:"-15%", width:"130%" }, 
-{ id: 18, name: "Maassluis", url: "https://waterinfo.rws.nl/publiek/waterhoogte/maassluis/details", top: "-250px", left: "-15%", width: "130%" } ];
+const stations = [ { id: 1, name: "Hoek van Holland", url: "https://waterinfo.rws.nl/publiek/waterhoogte/hoekvanholland/details", top: "-260px", left: "-15%", width: "130%" }, 
+{ id: 2, name: "Dordrecht", url: "https://waterinfo.rws.nl/publiek/waterhoogte/dordrecht.oudemaas.benedenmerwede/details", top: "-260px", left: "-15%", width: "130%" }, 
+{ id: 3, name: "Lobith", url: "https://waterinfo.rws.nl/publiek/waterhoogte/lobith.bovenrijn.tolkamer/details", top: "-260px", left: "-15%", width: "130%" }, 
+{ id: 4, name: "Nijmegen", url: "https://waterinfo.rws.nl/publiek/waterhoogte/nijmegen.waal/details", top: "-260px", left: "-15%", width: "130%" }, 
+{ id: 5, name: "Tiel", url: "https://waterinfo.rws.nl/publiek/waterhoogte/tiel.waal/details", top: "-260px", left: "-15%", width: "130%" },
+{ id: 6, name: "Zaltbommel", url: "https://waterinfo.rws.nl/publiek/waterhoogte/zaltbommel/details", top: "-260px", left: "-15%", width: "130%" },
+{ id: 7, name: "Dalem", url: "https://waterinfo.rws.nl/publiek/waterhoogte/dalem/details", top: "-260px", left: "-15%", width: "130%" },
+{ id: 8, name: "Werkendam", url: "https://waterinfo.rws.nl/publiek/waterhoogte/werkendam.nieuwemerwede/details", top: "-260px", left: "-15%", width: "130%" }, 
+{ id: 9, name: "Moerdijk", url: "https://waterinfo.rws.nl/publiek/waterhoogte/moerdijk/details", top: "-260px", left: "-15%", width: "130%" }, 
+{ id: 10, name: "Yerseke", url: "https://waterinfo.rws.nl/publiek/waterhoogte/yerseke/details", top: "-260px", left: "-15%", width: "130%" }, 
+{ id: 11, name: "Hansweert", url: "https://waterinfo.rws.nl/publiek/waterhoogte/hansweert/details", top: "-260px", left: "-15%", width: "130%" }, 
+{ id: 12, name: "Bath", url: "https://waterinfo.rws.nl/publiek/waterhoogte/rilland.bath/details", top: "-260px", left: "-15%", width: "130%" }, 
+{ id: 13, name: "Terneuzen", url: "https://waterinfo.rws.nl/publiek/waterhoogte/terneuzen/details", top: "-260px", left: "-15%", width: "130%" }, 
+{ id: 14, name: "Vlissingen", url: "https://waterinfo.rws.nl/publiek/waterhoogte/vlissingen/details", top: "-260px", left: "-15%", width: "130%" }, 
+{ id: 15, name: "Spijkenisse", url: "https://waterinfo.rws.nl/publiek/waterhoogte/spijkenisse.oudemaas/details", top: "-260px", left: "-15%", width: "130%" }, 
+{ id: 16, name: "Vlaardingen", url: "https://waterinfo.rws.nl/publiek/waterhoogte/vlaardingen/details", top: "-260px", left: "-15%", width: "130%" }, 
+{ id: 17, name: "Rotterdam", url: "https://waterinfo.rws.nl/publiek/waterhoogte/rotterdam.nieuwemaas.boerengat/details", top: "-260px", left: "-15%", width: "130%" }, 
+{ id: 18, name: "Maassluis", url: "https://waterinfo.rws.nl/publiek/waterhoogte/maassluis/details", top: "-260px", left: "-15%", width: "130%" } ];
 
         let favorites = JSON.parse(localStorage.getItem('ship_favorites')) || [];
 
