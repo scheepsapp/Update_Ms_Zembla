@@ -366,20 +366,49 @@
             nl: waterstandDataNL
         };
         // localStorage slaat alleen strings op, dus we gebruiken JSON.stringify()
-        localStorage.setItem(WATERSTANDEN_STORAGE_KEY, JSON.stringify(allWaterstandData));
-    }
+         localStorage.setItem(WATERSTANDEN_STORAGE_KEY, JSON.stringify(allWaterstandData));   
+         }
 
     function loadWaterstandData(waterstandDataDE, waterstandDataNL) {
-        const savedData = localStorage.getItem(WATERSTANDEN_STORAGE_KEY);
-        if (savedData) {
+    const savedData = localStorage.getItem(WATERSTANDEN_STORAGE_KEY);
+
+    if (savedData) {
+        try {
             const parsedData = JSON.parse(savedData);
-            
-            // Update de oorspronkelijke arrays. We retourneren de bijgewerkte arrays.
-            if (parsedData.de) waterstandDataDE.splice(0, waterstandDataDE.length, ...parsedData.de);
-            if (parsedData.nl) waterstandDataNL.splice(0, waterstandDataNL.length, ...parsedData.nl);
+
+            if (Array.isArray(parsedData.de)) {
+                waterstandDataDE.splice(
+                    0, waterstandDataDE.length, ...parsedData.de
+                );
+            }
+
+            if (Array.isArray(parsedData.nl)) {
+                waterstandDataNL.splice(
+                    0, waterstandDataNL.length, ...parsedData.nl
+                );
+            }
+        } catch (error) {
+            console.error("Fout bij laden van waterstanden:", error);
         }
-        return { de: waterstandDataDE, nl: waterstandDataNL };
     }
+
+    const ontbrekendeWaterstanden = [
+        { id: 'moer', name: 'Moerdijk', level: 0, ref: 0, currentLevel: 0, listId: 'nl' },
+        { id: 'yes', name: 'Yerseke', level: 0, ref: 0, currentLevel: 0, listId: 'nl' }
+    ];
+
+    ontbrekendeWaterstanden.forEach(waterstand => {
+        const bestaat = waterstandDataNL.some(
+            item => item.id === waterstand.id
+        );
+
+        if (!bestaat) {
+            waterstandDataNL.push(waterstand);
+        }
+    });
+
+    return { de: waterstandDataDE, nl: waterstandDataNL };
+}
 
 function loadShipHeight(shipHeightInputGlobal) {
     const savedHeight = localStorage.getItem(SHIP_HEIGHT_STORAGE_KEY);
@@ -447,8 +476,8 @@ let waterstandDataNL = [
     { id: 'rot', name: 'Rotterdam', level: 0.00, ref: 0.00, currentLevel: 0.00, listId: 'nl' },
     { id: 'spijk_nis', name: 'Spijkenisse', level: 0.00, ref: 0.00, currentLevel: 0.00, listId: 'nl' }, 
     { id: 'hoek', name: 'Hoek van Holland', level: 0.00, ref: 0.00, currentLevel: 0.00, listId: 'nl' },
-    { id: 'moer', name: 'Moerdijk', level: 0.00, ref: 0.00, currentLevel: 0.00, listId: 'nl' },
-    { id: 'yes', name: 'Yerseke', level: 0.00, ref: 0.00, currentLevel: 0.00, listId: 'nl' }
+{ id: 'moer', name: 'Moerdijk', level: 0.00, ref: 0.00, currentLevel: 0.00, listId: 'nl' },
+{ id: 'yes', name: 'Yerseke', level: 0.00, ref: 0.00, currentLevel: 0.00, listId: 'nl' }
 ];
 
 let allBridgeDataNL = [
@@ -477,12 +506,7 @@ let allBridgeDataNL = [
         // Laad scheepshoogte en update maxShipHeight
         let maxShipHeight = loadShipHeight(shipHeightInputGlobal); 
         
-       // FORCEER UPDATE: Als Spijkenisse ontbreekt in het geheugen, wis dan de oude data
-if (!localStorage.getItem('waterstandenData') || !localStorage.getItem('waterstandenData').includes('spijk_nis')) {
-    localStorage.removeItem('waterstandenData');
-}
-
-// Hierna komt je bestaande regel:
+     // Laad de opgeslagen waterstanden
 loadWaterstandData(waterstandDataDE, waterstandDataNL);
 
         // ====================================================================
